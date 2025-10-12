@@ -1,16 +1,16 @@
 # Find duplicates with count in array
 
-arr = [1, 2, 3, 2, 4, 1, 5, 2, 1]
+arr = [5, 9, 3, 6, 4, 9, 5]
 
-count_dict = {}
+duplicates = {}   # dictionary to store number -> count
 
 for num in arr:
-    if num in count_dict:
-        count_dict[num] += 1
+    if num in duplicates:
+        duplicates[num] += 1
     else:
-        count_dict[num] = 1
+        duplicates[num] = 1
 
-# Print only duplicates
-for key, value in count_dict.items():
-    if value > 1:
-        print(f"{key} appears {value} times")
+# Now print only those that appeared more than once
+for num, count in duplicates.items():
+    if count > 1:
+        print(f"{num} appears {count} times")
